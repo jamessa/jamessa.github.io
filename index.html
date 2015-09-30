@@ -2,15 +2,11 @@
 layout: default
 title: James Sa 撒景賢 and his researches
 ---
-<h2>Me and my research</h2>
-<ul id="me and my research">
-{% for post in site.posts %}
-  <li class="post-{{ post.category }}">
-  {% if post.external_url == nil %}
-    <a href="{{ post.url }}">{{ post.title }}</a><abbr>{{ post.date | date_to_string }}</abbr>
-  {% else %}
-    <a href="{{ post.external_url }}">{{ post.title }}</a><abbr>{{ post.date | date_to_string }}</abbr>
-  {% endif %}
-  </li>
-{% endfor %}
+
+<h2>Some thougths</h2>
+
+<ul class="posts">
+  {% for post in site.posts %}
+    <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+  {% endfor %}
 </ul>
